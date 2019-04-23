@@ -1,0 +1,70 @@
+Skip to content
+ 
+Openshift Basic Commands
+]$ cat <username>-<projectname>-rc
+
+export OS_AUTH_URL=http://172.25.250.50:5000/v3
+export OS_IDENTITY_API_VERSION=3
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_REGION_NAME=regionOne
+export OS_PROJECT_NAME=<project nane>
+export OS_USERNAME=<user nanme>
+export OS_PASSWORD=<password>
+export OS_USER_DOMAIN_NAME=Default
+]$ source <username>-<projectname>-rc
+
+]$ openstack help project show
+
+]$ openstack project show <project name>
+
+]$ openstack help user show
+
+]$ openstack user show <user name>
+
+]$ openstack help flavor list
+
+]$ openstack flavor list
+
+]$ openstack flavor show default
+
+]$ openstack image list
+
+]$ openstack help server
+
+]$ openstack server list -f json
+
+]$ openstack server show <instance name>
+
+]$ openstack server create --image rhel7 --flavor default --nic net-id=<network name> --wait <instance name>
+
+]$ openstack console log show <instance name>
+
+]$ openstack console url show <instance name>
+
+]$ openstack server stop <instance name>
+
+]$ openstack server delete <instance name>
+
+Creating Project, Group, User and Adding role to user
+]$ openstack project create --description <project description> --domain <domain-name> <project name>
+
+As Admin of the project
+]$ openstack group create --domain <domain name> <group name>
+
+]$ openstack user create --project <project name> --password-prompt <user name>
+
+]$ openstack group add user
+
+]$ openstack group contains user
+
+] $ openstack user set --disable demouser
+
+]$ openstack user delete <user name>
+
+]$ openstack token issue
+
+]$ openstack user create
+
+]$ openstack user create --project <project name> --password <password> --email <user@id.com> <user name>
+
+]$ openstack role add --project <project name> --user <user name> <role_name>
